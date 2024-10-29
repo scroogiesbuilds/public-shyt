@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Y2K Clothing Brand</title>
+
+  <style>
+    /* GLOBAL STYLES */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; transition: 0.3s ease; }
+    button:hover { transform: scale(1.05); }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background-color: #00d4ff; border-radius: 10px; }
+    html { scroll-behavior: smooth; }
+
+    /* NAVBAR */
+    nav {
+      position: fixed; top: 0; width: 100%; padding: 10px 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      background-color: rgba(0, 0, 0, 0.8); transition: background-color 0.3s;
+      z-index: 1000;
+    }
+    nav a { margin: 0 15px; font-weight: 600; }
+
+    /* HERO SECTION */
+    .hero {
+      height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      background: linear-gradient(45deg, #00d4ff, #000);
+    }
+    .hero h1 { font-size: 5rem; font-weight: 700; letter-spacing: 0.2em; }
+    .hero p { font-size: 1.2rem; margin-top: 10px; }
+    .glitch { animation: glitch 1s infinite; }
+
+    /* GLITCH ANIMATION */
+    @keyframes glitch {
+      0%, 100% { text-shadow: 2px 2px #00d4ff, -2px -2px #ff00ff; }
+      50% { text-shadow: -2px 2px #00d4ff, 2px -2px #ff00ff; }
+    }
+
+    /* PRODUCT GRID */
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px; padding: 40px;
+    }
+    .product {
+      position: relative; overflow: hidden; border-radius: 12px;
+      background-color: #111;
+    }
+    .product img {
+      width: 100%; transition: transform 0.3s;
+    }
+    .product:hover img { transform: scale(1.1); }
+    .product-info {
+      position: absolute; bottom: 10px; left: 10px; color: #fff;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 10px;
+      background-color: rgba(0, 0, 0, 0.8); color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <h1>Y2KBrand</h1>
+    <div>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1 class="glitch">Y2K FASHION FOR MEN</h1>
+    <p>Minimalist clothing with a futuristic twist.</p>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section id="shop" class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="Y2K Hoodie" />
+      <div class="product-info">
+        <h2>Y2K Hoodie</h2>
+        <p>$80</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="Retro Jeans" />
+      <div class="product-info">
+        <h2>Retro Jeans</h2>
+        <p>$120</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="Futuristic T-Shirt" />
+      <div class="product-info">
+        <h2>Futuristic T-Shirt</h2>
+        <p>$50</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="Sneakers" />
+      <div class="product-info">
+        <h2>Y2K Sneakers</h2>
+        <p>$150</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Y2KBrand. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // NAVBAR BACKGROUND TRANSITION
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+      } else {
+        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      }
+    });
+  </script>
+</body>
+</html>
